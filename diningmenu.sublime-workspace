@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"menu",
+				"menu_id"
+			],
+			[
+				"loca",
+				"location_id"
+			],
+			[
+				"lo",
+				"load_location"
+			],
+			[
+				"pre",
+				"prev_item_name"
+			],
+			[
+				"get",
+				"getText"
+			],
+			[
 				"orga",
 				"Organism"
 			],
@@ -494,26 +514,6 @@
 			[
 				"see",
 				"sequence_text"
-			],
-			[
-				"jobvi",
-				"job-view-header"
-			],
-			[
-				"searc",
-				"search"
-			],
-			[
-				"Plogo",
-				"PlogoException"
-			],
-			[
-				"cu",
-				"curSearchRequest"
-			],
-			[
-				"job",
-				"job-list"
 			]
 		]
 	},
@@ -523,7 +523,50 @@
 			"file": "modules/menu_parser.py",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1388,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "{\"Lunch\": {\"-- OPTIONS --\": [\"Bacon Crumbles\", \"Baked Potatoes\", \"Broccoli\", \"Cheese Sauce\", \"Chili con Carne\", \"Sauteed Mushrooms\"], \"-- SOUPS --\": [\"Beef Noodle Soup\", \"Corn Chowder\"], \"-- GRILL ITEMS --\": [\"Dr. Praeger's Burger w/ Bun\", \"Grilled Cheese Bacon & Tomato\", \"Grilled Cheese\", \"Grilled Hot Dogs w/ Toasted Roll\", \"Hamburgers w/ Bun\", \"XTreme Black Pepper Fries\"], \"-- INTERNATIONAL STATION --\": [\"Brown Rice\", \"Seared Tofu With Vegetables\", \"Turkey Dumpling Soup\", \"Velvet Chicken in Ginger Sauce\", \"White Rice\"], \"-- DESSERTS --\": [\"French Apple Squares\", \"Triple Chocolate Cookies\"], \"-- COMFORT LINE --\": [\"Macaroni & Cheese\", \"Mashed Potatoes\", \"Peas & Carrots\", \"Stove Top Stuffing\", \"Turkey Gravy\"], \"-- PASTA STATION --\": [\"Marinara Sauce\", \"Meat Sauce\"], \"-- HEALTHY HUSKY ENTREE --\": [\"Hot Open Face Turkey Sandwich\"]},\n\n \"Breakfast\": {\"-- BREAKFAST ENTREES --\": [\"Buttermilk Pancakes\", \"Cheesy Scrambled Eggs\", \"Egg White Omelet\", \"French Toast Stix\", \"Fried Eggs\", \"Hard Boiled Eggs\", \"O'Brien Potatoes\", \"Oatmeal Hot Cereal\", \"Omelet Bar\", \"Pork Sausage Links\", \"Scrambled Egg Whites\", \"Scrambled Eggs\"]},\n\n  \"Dinner\": {\"-- OPTIONS --\": [\"California Vegetable Blend\", \"Green Beans Almondine\", \"Harvest Vegetable Pilaf\", \"Sour Dough Rolls\"], \"-- SOUPS --\": [\"Beef Noodle Soup\", \"Corn Chowder\"], \"-- GRILL ITEMS --\": [\"Dr. Praeger's Burger w/ Bun\", \"Grilled Cheese\", \"Grilled Hot Dogs w/ Toasted Roll\", \"Hamburgers w/ Bun\", \"Straight Cut French Fries\"], \"-- INTERNATIONAL STATION --\": [\"Bibimbop [Rice & Vegetables]\", \"Brown Rice\", \"Bulgogi Beef\", \"Korean Noodles [Chopchae]\", \"Korean Soup\"], \"-- DESSERTS --\": [\"Banana Cream Pie\", \"Boston Cream Cake\"], \"-- COMFORT LINE --\": [\"Beef Gravy\", \"Cheesy Chicken Casserole\", \"Fried Mushrooms\", \"Mashed Potatoes\", \"Peas\", \"Roasted Root Vegetables\"], \"-- CARVING STATION --\": [\"Yankee Beef Pot Roast With Pan Gravy\"], \"-- PASTA STATION --\": [\"Marinara Sauce\", \"Meat Sauce\"], \"-- HEALTHY HUSKY ENTREE --\": [\"Raspberry Balsamic Chicken\"]}}",
+			"file": "modules/menu-test.txt",
+			"file_size": 1998,
+			"file_write_time": 130034628271447478,
+			"settings":
+			{
+				"buffer_size": 2003,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "static/mobile/ucmenu.js",
+			"settings":
+			{
+				"buffer_size": 3078,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/schwartz-lab/web2py/applications/scanx/static/js/scanx.js",
+			"settings":
+			{
+				"buffer_size": 38005,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "modules/menu_parser_test.py",
+			"settings":
+			{
+				"buffer_size": 218,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "static/mobile/index.html",
+			"settings":
+			{
+				"buffer_size": 1716,
 				"line_ending": "Windows"
 			}
 		}
@@ -556,6 +599,9 @@
 	},
 	"file_history":
 	[
+		"/D/web-projects/web2py/applications/diningmenu/modules/menu-test.txt",
+		"/D/web-projects/web2py/applications/diningmenu/modules/menu-test",
+		"/D/schwartz-lab/rocgen/curves.py",
 		"/D/schwartz-lab/web2py/applications/scanx/views/layout.html",
 		"/D/web-projects/web2py/applications/labequip/models/equipment.py",
 		"/D/schwartz-lab/web2py/applications/scanx/modules/seq_view_helper.py",
@@ -680,10 +726,7 @@
 		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/welcome/__init__.py",
 		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/static/js/jquery.jscrollpane.js",
 		"/C/plogo/application/views/footer.php",
-		"/C/plogo/application/views/top_view.php",
-		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/static/less/sprites.less",
-		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/static/less/variables.less",
-		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/.git/info/exclude"
+		"/C/plogo/application/views/top_view.php"
 	],
 	"find":
 	{
@@ -691,7 +734,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 			"D:\\schwartz-lab\\web2py\\applications\\scanx\\controllers",
@@ -711,6 +754,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"item_li",
+			"scanx",
+			"scanx.",
 			"Decimal(",
 			"float('",
 			"float9'",
@@ -835,17 +881,16 @@
 			"fixed_pos_val",
 			"fixed_pos",
 			"fixed_ps",
-			"t",
-			"T",
-			"values",
-			"pos_data"
+			"t"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"menu_li",
+			"ucmenu.",
 			"float(",
 			"0",
 			".right",
@@ -928,7 +973,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -936,7 +981,86 @@
 					"file": "modules/menu_parser.py",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1113,
+								1113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "modules/menu-test.txt",
+					"settings":
+					{
+						"buffer_size": 2003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2003,
+								2003
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "static/mobile/ucmenu.js",
+					"settings":
+					{
+						"buffer_size": 3078,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2341,
+								2341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 756.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/schwartz-lab/web2py/applications/scanx/static/js/scanx.js",
+					"settings":
+					{
+						"buffer_size": 38005,
 						"regions":
 						{
 						},
@@ -944,15 +1068,76 @@
 						[
 							[
 								0,
-								0
+								38005
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "modules/menu_parser_test.py",
+					"settings":
+					{
+						"buffer_size": 218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								218,
+								218
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "static/mobile/index.html",
+					"settings":
+					{
+						"buffer_size": 1716,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1625,
+								1625
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 674.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -977,11 +1162,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":

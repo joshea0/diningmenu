@@ -8,7 +8,7 @@ class MenuParser(object):
 	def __init__(self):
 		pass
 
-	def parse_menu_page(self, page_url):
+	def parse_menu_page_json(self, page_url):
 		menu = dict()
 		html = requests.get(page_url).text
 		soup = BeautifulSoup(html)
@@ -37,9 +37,5 @@ class MenuParser(object):
 					continue
 				else:
 					continue
-					
-
 		out = json.dumps(menu)
-		with open('menu-test.txt', 'w+') as f:
-			for line in out.splitlines():
-				f.write(line)
+		return out

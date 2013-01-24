@@ -1,2 +1,17 @@
 {
+	"folders":
+	[
+		{
+			"path": "views"
+		},
+		{
+			"path": "controllers"
+		},
+		{
+			"path": "modules"
+		},
+		{
+			"path": "models"
+		}
+	]
 }

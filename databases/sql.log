@@ -53,3 +53,12 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2013-01-23T23:09:40.753000
+CREATE TABLE location(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512) NOT NULL,
+    menu_url CHAR(512) NOT NULL,
+    menu_json TEXT,
+    time_last_update TIMESTAMP
+);
+success!
