@@ -20,7 +20,7 @@ ucmenu = {
 
 	ajax: {
 		load_location: function(){
-			request = $.ajax({
+			var request = $.ajax({
 				type: 'GET',
 				url: ucmenu.url.load_location,
 				data: params,
@@ -64,11 +64,33 @@ ucmenu = {
 		},
 
 		create_location_page: function(location_id){
-
+			var location_data = ucmenu.location_data[location_id];
+			var template_page = $('#location-template');
+			page = template_page.clone().attr('id', ucmenu.sel.location_page_id(location_id));
+			var menu_list = page.find('ul.menu-list');
+			var template_menu_li = menu_list.find('li.menu_li.template');
+			for(var i=0; i < location_data.length; i++){
+				menu_data = location_data[i];
+				menu_li = template_item.clone().removeClass('template');
+				menu_li.children('a').text(menu_data['name']);
+				menu_li.attr('href', '#' + ucmenu.sel.menu_page_id(menu_data['id']))
+				menu_list.append(menu_li);
+			}
 		},
 
 		create_menu_page: function(location_id, menu_id){
-			
+			var location_data = ucmenu.location_data[location_id];
+			var menu_data = location_data[menu];
+			var template_page = $('#menu-template');
+			page = template_page.clone().attr('id', ucmenu.sel.menu_page_id(menu_id));
+			var item_list = page.find('ul.item-list');
+			var template_item = item_list.find('li.item.template');
+			for(var i=0; i < menu_data.length; i++){
+				menu_item = menu_data[i];
+				item_li = template_item.clone().removeClass('template');
+				item_li.children('a').text(menu_item.name);
+				item_list.append(item_li);
+			}
 		},
 	},
 	util: {
