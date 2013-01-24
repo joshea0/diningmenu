@@ -16,18 +16,28 @@ class MenuParser(object):
 		for meal in meals:
 			meal_name = meal.getText()
 			meal_table = meal.find_parent('table').find_parent('table') #yay tables everywhere (yes this is meant to be called twice)
-			meal_cats = meal_table.find_all('div', class_='shortmenucats')
+			meal_rows = meal_table.find_all('tr')
 			menu[meal_name] = dict()
-			for cat in meal_cats:
-				cat_name = cat.find('span').getText()
-				cat_tr = cat.find_parent('tr')
-				cat_items_tr = cat_tr.find_next_siblings('tr')
-				menu[meal_name][cat_name] = list()
-				for tr in cat_items_tr:
-					item = tr.find('div', class_='shortmenurecipes')
-					if item is not None:
-						item_name = item.find('span').getText()
-					menu[meal_name][cat_name].append(item_name)
+			current_cat = None
+			prev_item_name = None #getting duplicates due to crappy HTML structure, use this to preven it
+			for row in meal_rows:
+				#first check if its a category row, then check if it's a menu item
+				cat = row.find('div', class_='shortmenucats')
+				if cat is not None:
+					cat_name = cat.find('span').getText()
+					current_cat = cat_name
+					menu[meal_name][current_cat] = list()
+					continue
+				item = row.find('div', class_='shortmenurecipes')
+				if item is not None:
+					item_name = item.find('span').getText()
+					if prev_item_name is None or prev_item_name != item_name:
+						menu[meal_name][current_cat].append(item_name)
+						prev_item_name = item_name
+					continue
+				else:
+					continue
+					
 
 		out = json.dumps(menu)
 		with open('menu-test.txt', 'w+') as f:
