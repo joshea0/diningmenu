@@ -49,7 +49,7 @@ ucmenu = {
 		},
 		load_location_success: function(data, textStatus){
 			ucmenu.location_data[data.location_id] = data.loc;
-			ucmenu.ui.create_location_page(data.location_id);
+			ucmenu.ui.create_location_page(data.location_id, data.loc_name);
 			ucmenu.ui.show_location_page(data.location_id);
 		},
 		load_location_error: function(jqXHR, textStatus, errorThrown){
@@ -78,8 +78,8 @@ ucmenu = {
 		location_page_$: function(loc_id){
 			return $('#'+ucmenu.sel.location_page_id(loc_id));
 		},
-		menu_page_id: function(menu_id){
-			return 'menu-'+menu_id;
+		menu_page_id: function(loc_id, menu_id){
+			return 'loc-'+loc_id+'-menu-'+menu_id;
 		}
 	},
 	events: {
@@ -119,13 +119,14 @@ ucmenu = {
 			}
 		},
 
-		create_location_page: function(location_id){
+		create_location_page: function(location_id, name){
 			var location_data = ucmenu.location_data[location_id];
 			var template_page = $('#location-template');
 			var page_id = ucmenu.sel.location_page_id(location_id);
-			var page = template_page.clone().attr('id', page_id);
-			page.data('url', page_id);
-			var menu_list = page.find('ul.menu-list');
+			var $page = template_page.clone().attr('id', page_id);
+			$page.data('url', page_id);
+			$page.find('.page-header').text(name);
+			var menu_list = $page.find('ul.menu-list');
 			var template_menu_li = menu_list.find('li.menu.template');
 			for(var menu in location_data){
 				if(location_data.hasOwnProperty(menu)) {
@@ -134,13 +135,13 @@ ucmenu = {
 					$menu_li = template_menu_li.clone().removeClass('template');
 					$a = $menu_li.find('a');
 					$a.text(menu);
-					$a.attr('href', '#'+ucmenu.sel.menu_page_id(menu))
+					$a.attr('href', '#'+ucmenu.sel.menu_page_id(location_id, menu))
 					console.log($menu_li);
 					menu_list.append($menu_li);
 					ucmenu.ui.create_menu_page(location_id, menu, menu_data);
 				}
 			}
-			$('body').append(page);
+			$('body').append($page);
 		},
 
 		show_location_page: function(location_id){
@@ -150,7 +151,7 @@ ucmenu = {
 
 		create_menu_page: function(location_id, menu, menu_data){
 			var template_page = $('#menu-template');
-			page = template_page.clone().attr('id', ucmenu.sel.menu_page_id(menu));
+			page = template_page.clone().attr('id', ucmenu.sel.menu_page_id(location_id, menu));
 			var $template_cat = page.find('div.category.template');
 			for(var cat in menu_data){
 				//first make the section div

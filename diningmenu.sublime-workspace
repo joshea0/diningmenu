@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"menujs",
+				"menu_data_json"
+			],
+			[
 				"menu",
 				"menu_id"
 			],
@@ -510,10 +514,6 @@
 			[
 				"simple",
 				"simple_scan"
-			],
-			[
-				"see",
-				"sequence_text"
 			]
 		]
 	},
@@ -523,18 +523,7 @@
 			"file": "modules/menu_parser.py",
 			"settings":
 			{
-				"buffer_size": 1388,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "{\"Lunch\": {\"-- OPTIONS --\": [\"Bacon Crumbles\", \"Baked Potatoes\", \"Broccoli\", \"Cheese Sauce\", \"Chili con Carne\", \"Sauteed Mushrooms\"], \"-- SOUPS --\": [\"Beef Noodle Soup\", \"Corn Chowder\"], \"-- GRILL ITEMS --\": [\"Dr. Praeger's Burger w/ Bun\", \"Grilled Cheese Bacon & Tomato\", \"Grilled Cheese\", \"Grilled Hot Dogs w/ Toasted Roll\", \"Hamburgers w/ Bun\", \"XTreme Black Pepper Fries\"], \"-- INTERNATIONAL STATION --\": [\"Brown Rice\", \"Seared Tofu With Vegetables\", \"Turkey Dumpling Soup\", \"Velvet Chicken in Ginger Sauce\", \"White Rice\"], \"-- DESSERTS --\": [\"French Apple Squares\", \"Triple Chocolate Cookies\"], \"-- COMFORT LINE --\": [\"Macaroni & Cheese\", \"Mashed Potatoes\", \"Peas & Carrots\", \"Stove Top Stuffing\", \"Turkey Gravy\"], \"-- PASTA STATION --\": [\"Marinara Sauce\", \"Meat Sauce\"], \"-- HEALTHY HUSKY ENTREE --\": [\"Hot Open Face Turkey Sandwich\"]},\n\n \"Breakfast\": {\"-- BREAKFAST ENTREES --\": [\"Buttermilk Pancakes\", \"Cheesy Scrambled Eggs\", \"Egg White Omelet\", \"French Toast Stix\", \"Fried Eggs\", \"Hard Boiled Eggs\", \"O'Brien Potatoes\", \"Oatmeal Hot Cereal\", \"Omelet Bar\", \"Pork Sausage Links\", \"Scrambled Egg Whites\", \"Scrambled Eggs\"]},\n\n  \"Dinner\": {\"-- OPTIONS --\": [\"California Vegetable Blend\", \"Green Beans Almondine\", \"Harvest Vegetable Pilaf\", \"Sour Dough Rolls\"], \"-- SOUPS --\": [\"Beef Noodle Soup\", \"Corn Chowder\"], \"-- GRILL ITEMS --\": [\"Dr. Praeger's Burger w/ Bun\", \"Grilled Cheese\", \"Grilled Hot Dogs w/ Toasted Roll\", \"Hamburgers w/ Bun\", \"Straight Cut French Fries\"], \"-- INTERNATIONAL STATION --\": [\"Bibimbop [Rice & Vegetables]\", \"Brown Rice\", \"Bulgogi Beef\", \"Korean Noodles [Chopchae]\", \"Korean Soup\"], \"-- DESSERTS --\": [\"Banana Cream Pie\", \"Boston Cream Cake\"], \"-- COMFORT LINE --\": [\"Beef Gravy\", \"Cheesy Chicken Casserole\", \"Fried Mushrooms\", \"Mashed Potatoes\", \"Peas\", \"Roasted Root Vegetables\"], \"-- CARVING STATION --\": [\"Yankee Beef Pot Roast With Pan Gravy\"], \"-- PASTA STATION --\": [\"Marinara Sauce\", \"Meat Sauce\"], \"-- HEALTHY HUSKY ENTREE --\": [\"Raspberry Balsamic Chicken\"]}}",
-			"file": "modules/menu-test.txt",
-			"file_size": 1998,
-			"file_write_time": 130034628271447478,
-			"settings":
-			{
-				"buffer_size": 2003,
+				"buffer_size": 1307,
 				"line_ending": "Windows"
 			}
 		},
@@ -542,15 +531,31 @@
 			"file": "static/mobile/ucmenu.js",
 			"settings":
 			{
-				"buffer_size": 3078,
+				"buffer_size": 5713,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/schwartz-lab/web2py/applications/scanx/static/js/scanx.js",
+			"file": "views/mobile/index.html",
 			"settings":
 			{
-				"buffer_size": 38005,
+				"buffer_size": 2134,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/location.py",
+			"settings":
+			{
+				"buffer_size": 729,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "static/mobile/ucmenu.css",
+			"settings":
+			{
+				"buffer_size": 28,
 				"line_ending": "Windows"
 			}
 		},
@@ -563,10 +568,10 @@
 			}
 		},
 		{
-			"file": "static/mobile/index.html",
+			"file": "controllers/mobile.py",
 			"settings":
 			{
-				"buffer_size": 1716,
+				"buffer_size": 29,
 				"line_ending": "Windows"
 			}
 		}
@@ -599,11 +604,20 @@
 	},
 	"file_history":
 	[
+		"/D/google_appengine/web2py/app.yaml",
+		"/D/web-projects/web2py/app.yaml",
+		"/D/google_appengine/web2py/applications/diningmenu/modules/BeautifulSoup.py",
+		"/C/Users/Joey/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/D/web-projects/web2py/applications/diningmenu/models/location.py",
+		"/D/web-projects/web2py/applications/diningmenu/.git/info/exclude",
+		"/D/web-projects/web2py/applications/diningmenu/diningmenu.sublime-project",
+		"/D/web-projects/web2py/applications/diningmenu/static/mobile/index.html",
+		"/D/schwartz-lab/web2py/applications/scanx/static/js/scanx.js",
 		"/D/web-projects/web2py/applications/diningmenu/modules/menu-test.txt",
+		"/D/web-projects/web2py/applications/labequip/models/equipment.py",
 		"/D/web-projects/web2py/applications/diningmenu/modules/menu-test",
 		"/D/schwartz-lab/rocgen/curves.py",
 		"/D/schwartz-lab/web2py/applications/scanx/views/layout.html",
-		"/D/web-projects/web2py/applications/labequip/models/equipment.py",
 		"/D/schwartz-lab/web2py/applications/scanx/modules/seq_view_helper.py",
 		"/D/schwartz-lab/web2py/applications/scanx/models/ptm.py",
 		"/D/schwartz-lab/web2py/applications/scanx/static/predictors/table.txt",
@@ -626,7 +640,6 @@
 		"/D/schwartz-lab/web2py/applications/scanx/modules/ppv.py",
 		"/D/schwartz-lab/web2py/applications/scanx/views/scan/results_view.html",
 		"/D/schwartz-lab/web2py/applications/scanx/modules/seq_proc.py",
-		"/D/schwartz-lab/web2py/applications/scanx/static/js/scanx.js",
 		"/D/schwartz-lab/web2py/applications/scanx/views/scan/protein_list.html",
 		"/D/schwartz-lab/rocgen/input/threshold 0.000001/scanxresults_set1_0.000001.txt",
 		"/D/schwartz-lab/web2py/applications/scanx/modules/const.py",
@@ -647,7 +660,6 @@
 		"/C/Users/Joey/Downloads/code/regex.h",
 		"/C/Users/Joey/Downloads/code/util.cu",
 		"/C/schwartz-lab/web2py/applications/scanx/.git/info/exclude",
-		"/C/Users/Joey/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/views/scan/manual.html",
 		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/views/scan/ppv.html",
 		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/views/scan/scores_table.html",
@@ -719,14 +731,7 @@
 		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/views/layout.html",
 		"/C/randomotif/application/views/rand_protein_seq.php",
 		"/C/randomotif/application/views/generator_ajax.php",
-		"/C/randomotif/application/controllers/randomdataset.php",
-		"/C/Program Files (x86)/Google/google_appengine/web2py/app.yaml",
-		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/welcome/controllers/default.py",
-		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/welcome/modules/__init__.py",
-		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/welcome/__init__.py",
-		"/C/Program Files (x86)/Google/google_appengine/web2py/applications/scanx/static/js/jquery.jscrollpane.js",
-		"/C/plogo/application/views/footer.php",
-		"/C/plogo/application/views/top_view.php"
+		"/C/randomotif/application/controllers/randomdataset.php"
 	],
 	"find":
 	{
@@ -734,7 +739,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"D:\\schwartz-lab\\web2py\\applications\\scanx\\controllers",
@@ -754,6 +759,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ucmenu.location_data[data.location_id]",
+			"menu_page_id",
+			"BeautifulSoup",
+			"json",
+			"menu_data_json",
+			" location_Data",
 			"item_li",
 			"scanx",
 			"scanx.",
@@ -875,20 +886,15 @@
 			"score_tabl",
 			"scanned-sequence-container",
 			"scanned-sequence",
-			"scanned-sequences",
-			".fasta-sequence",
-			"center_pos",
-			"fixed_pos_val",
-			"fixed_pos",
-			"fixed_ps",
-			"t"
+			"scanned-sequences"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"menu_data_dict",
 			"menu_li",
 			"ucmenu.",
 			"float(",
@@ -973,7 +979,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -981,15 +987,15 @@
 					"file": "modules/menu_parser.py",
 					"settings":
 					{
-						"buffer_size": 1388,
+						"buffer_size": 1307,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1113,
-								1113
+								830,
+								830
 							]
 						],
 						"settings":
@@ -1005,75 +1011,81 @@
 				},
 				{
 					"buffer": 1,
-					"file": "modules/menu-test.txt",
+					"file": "static/mobile/ucmenu.js",
 					"settings":
 					{
-						"buffer_size": 2003,
+						"buffer_size": 5713,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2003,
-								2003
+								4877,
+								4877
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2363.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "static/mobile/ucmenu.js",
+					"file": "views/mobile/index.html",
 					"settings":
 					{
-						"buffer_size": 3078,
+						"buffer_size": 2134,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2341,
-								2341
+								1056,
+								1056
+							],
+							[
+								1484,
+								1484
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 756.0,
+						"translation.y": 432.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "/D/schwartz-lab/web2py/applications/scanx/static/js/scanx.js",
+					"file": "controllers/location.py",
 					"settings":
 					{
-						"buffer_size": 38005,
+						"buffer_size": 729,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								38005
+								87,
+								87
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1084,6 +1096,32 @@
 				},
 				{
 					"buffer": 4,
+					"file": "static/mobile/ucmenu.css",
+					"settings":
+					{
+						"buffer_size": 28,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "modules/menu_parser_test.py",
 					"settings":
 					{
@@ -1108,36 +1146,29 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 5,
-					"file": "static/mobile/index.html",
+					"buffer": 6,
+					"file": "controllers/mobile.py",
 					"settings":
 					{
-						"buffer_size": 1716,
+						"buffer_size": 29,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1625,
-								1625
+								14,
+								14
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 674.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1162,18 +1193,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -1715,7 +1739,7 @@
 		[
 			[
 				"",
-				"/D/web-projects/web2py/applications/flexpass/flexpass.sublime-project"
+				"/D/schwartz-lab/web2py/applications/scanx/scanx.sublime-project"
 			]
 		],
 		"width": 380.0
