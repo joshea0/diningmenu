@@ -62,3 +62,47 @@ CREATE TABLE location(
     time_last_update TIMESTAMP
 );
 success!
+timestamp: 2013-02-23T13:59:01.869000
+CREATE TABLE Menu(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    location INTEGER REFERENCES Location (id) ON DELETE CASCADE,
+    name CHAR(512) NOT NULL,
+    start_time TIMESTAMP,
+    end_time TIMESTAMP,
+    time_last_update TIMESTAMP
+);
+success!
+timestamp: 2013-02-23T13:59:21.593000
+CREATE TABLE MenuCategory(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    menu INTEGER REFERENCES Menu (id) ON DELETE CASCADE,
+    name CHAR(512) NOT NULL
+);
+success!
+timestamp: 2013-02-23T13:59:21.694000
+CREATE TABLE Food(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category INTEGER REFERENCES MenuCategory (id) ON DELETE CASCADE,
+    name CHAR(512) NOT NULL,
+    vegetarian CHAR(1),
+    vegan CHAR(1),
+    contains_nuts CHAR(1),
+    time_last_update TIMESTAMP
+);
+success!
+timestamp: 2013-02-23T14:00:56.420000
+CREATE TABLE User(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    device_id CHAR(512) NOT NULL,
+    name CHAR(512)
+);
+success!
+timestamp: 2013-02-23T14:00:56.520000
+CREATE TABLE FoodRating(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user INTEGER REFERENCES User (id) ON DELETE CASCADE,
+    food INTEGER REFERENCES Food (id) ON DELETE CASCADE,
+    rating INTEGER NOT NULL,
+    time_last_update TIMESTAMP NOT NULL
+);
+success!
