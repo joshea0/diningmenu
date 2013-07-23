@@ -1,0 +1,9 @@
+
+
+<ul data-role="listview" class="location-list">
+	{{for loc in locations:}}
+	<li class="location">
+		<a href="#" data-id="{{=loc.id}}">{{=loc.name}}</a>
+	</li>
+	{{pass}}
+</ul>

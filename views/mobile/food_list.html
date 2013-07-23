@@ -1,0 +1,14 @@
+
+
+<div class="food-list">
+	{{for cat in category_list:}}
+	<div class="category" data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" data-collapsed="false">
+		<h2>{{=cat.name}}</h2>
+		<ul data-role="listview" class="item-list">
+			<li class="food">
+				<a href="#">{{=food.name}}</a>
+			</li>
+		</ul>
+	</div><!-- /collapsible -->
+	{{pass}}
+</div>

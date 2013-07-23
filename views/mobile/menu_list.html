@@ -1,0 +1,17 @@
+
+
+<ul data-role="listview" class="menu-list" data-location-id="{{=location.id}}">
+	{{for menu in menu_list:}}
+	<li class="menu">
+		<a href="#" data-id="{{=menu.id}}">
+			<span class="name">{{=menu.name}}</span>
+			{{if menu.start_time is not None:}}
+			<span class="start-time">Starts: {{=menu.start_time}}</span>
+			{{pass}}
+			{{if menu.end_time is not None:}}
+			<span class="end-time">Ends: {{=menu.end_time}}</span>
+			{{pass}}
+		</a>
+	</li>
+	{{pass}}
+</ul>

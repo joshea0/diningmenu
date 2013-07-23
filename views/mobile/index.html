@@ -13,18 +13,13 @@
 </head>
 <body>
 
-<div data-role="page" id="home">
+<div data-role="page" id="location-list">
 
 	<div data-role="header">
 		<h1>Husky Nom List</h1>
 	</div><!-- /header -->
 
-	<div data-role="content">
-		<ul data-role="listview" class="location-list">
-			<li class="location template">
-				<a href="#"></a>
-			</li>
-		</ul>
+	<div data-role="content" class="content-include">
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -32,18 +27,13 @@
 	</div><!-- /footer -->
 </div><!-- /page -->
 
-<div data-role="page" id="location-template" data-add-back-btn="true" data-back-btn-text="Back">
+<div data-role="page" id="location" data-add-back-btn="true" data-back-btn-text="Back">
 
 	<div data-role="header">
 		<h1 class="page-header"></h1>
 	</div><!-- /header -->
 
-	<div data-role="content">
-		<ul data-role="listview" class="menu-list">
-			<li class="menu template">
-				<a href="#"></a>
-			</li>
-		</ul>
+	<div data-role="content" class="content-include">
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -51,21 +41,13 @@
 	</div><!-- /footer -->
 </div><!-- /page -->
 
-<div data-role="page" id="menu-template" data-add-back-btn="true" data-back-btn-text="Back">
+<div data-role="page" id="menu" data-add-back-btn="true" data-back-btn-text="Back">
 
 	<div data-role="header">
 		<h1 class="page-header"></h1>
 	</div><!-- /header -->
 
-	<div data-role="content" class="content">
-		<div class="category template" data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" data-collapsed="false">
-			<h2>TEMPLATE</h2>
-			<ul data-role="listview" class="item-list">
-			<li class="item template">
-				<a href=""></a>
-			</li>
-		</ul>
-		</div><!-- /collapsible -->
+	<div data-role="content" class="content-include">
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -76,7 +58,7 @@
 
 <script type="text/javascript">
 
-$('#home').bind('pageinit', ucmenu.init);
+$('#location-list').bind('pageinit', ucmenu.init);
 
 </script>
 

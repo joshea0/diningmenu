@@ -9,20 +9,39 @@ ucmenu = {
 	},
 
 	init: function(){
+		ucmenu.events.init_handlers();
 		ucmenu.ajax.load_location_list();
 	},
 
 	/** URLs for AJAX requests and such */
 	url: {
+		base_url: '/diningmenu/',
 		location_index: '/diningmenu/location/index.json',
-		location_get: '/diningmenu/location/get.json'
+		location_get: '/diningmenu/location/get.json',
+		load_menu_list: function(){ return base_url + 'location/menus'; },
+		load_location_list: function(){ return base_url + 'mobile/location_list.html' },
 	},
 
 	ajax: {
+		locations: {},
+		load_menu_list: function(location_id){
+			var request = $.ajax({
+				type: 'GET',
+				url: ucmenu.url.load_menu_list(),
+				dataType: 'html',
+				data: {id: location_id},
+				success: ucmenu.ajax.load_menu_list_success,
+				error: ucmenu.ajax.ajax_error
+			});
+		},
+		load_menu_list_success: function(data, textStatus){
+			$menu_list = $(data);
+			ucmenu.ui.insert_and_show_menu_list($menu_list);
+		},
 		load_location_list: function(){
 			var request = $.ajax({
 				type: 'GET',
-				url: ucmenu.url.location_index,
+				url: ucmenu.url.load_location_list,
 				dataType: 'json',
 				success: ucmenu.ajax.load_location_list_success,
 				error: ucmenu.ajax.load_location_list_error
@@ -30,33 +49,13 @@ ucmenu = {
 		},
 		load_location_list_success: function(data, textStatus){
 			console.log(data);
-			ucmenu.ui.populate_location_list(data);
+			ucmenu.ui.show_location_list($(data));
 		},
 		load_location_list_error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR);
 			console.log(errorThrown);
 			console.log('error. Please contact a developer');
 		},
-		load_location: function(loc_id){
-			var request = $.ajax({
-				type: 'GET',
-				url: ucmenu.url.location_get,
-				dataType: 'json',
-				data: {id: loc_id},
-				success: ucmenu.ajax.load_location_success,
-				error: ucmenu.ajax.load_location_error
-			});
-		},
-		load_location_success: function(data, textStatus){
-			ucmenu.location_data[data.location_id] = data.loc;
-			ucmenu.ui.create_location_page(data.location_id, data.loc_name);
-			ucmenu.ui.show_location_page(data.location_id);
-		},
-		load_location_error: function(jqXHR, textStatus, errorThrown){
-			console.log(jqXHR);
-			console.log(errorThrown);
-			console.log('error. Please contact a developer');
-		}
 	},
 	/**
 	 * @author Joey
@@ -83,17 +82,17 @@ ucmenu = {
 		}
 	},
 	events: {
-		location_li_click: function(event){
-			var splits = $(this).attr('href').split('-');
-			var loc_id = splits[1];
-			console.log('loc.id == '+loc_id);
-			if(ucmenu.sel.location_page_$(loc_id).length == 0){
-				ucmenu.ajax.load_location(loc_id);
-				//TODO: show loading icon
-			}else{
-				//ucmenu.ui.show_location_page(loc_id);
-				//JQM should handle it...
-			}
+		init_handlers: function(){
+			$('#location-list').on('click' ,'ul.location-list li.location>a', ucmenu.events.location_btn_click);
+			$('#location').on('click' ,'ul.menu-list li.menu>a', ucmenu.events.menu_btn_click);
+		},
+		location_btn_click: function(event){
+			var loc_id = $(this).data('id');
+			ucmenu.ui.show_menu_list(loc_id);
+		},
+		menu_btn_click: function(event){
+			var menu_id = $(this).data('id');
+			ucmenu.ui.show_food_list(menu_id);
 		}
 	},
 	ui: {
@@ -103,75 +102,44 @@ ucmenu = {
 			init: function(){
 			},
 		},
-
-		populate_location_list: function(locations){
-			var $page = $('#home');
-			var $loc_ul = $page.find('ul.location-list');
-			for(var i=0; i < locations.length; i++){
-				loc = locations[i];
-				$li = $loc_ul.find('li.location.template').clone().removeClass('template');
-				var $a = $li.find('a');
-				$a.attr('href', '#'+ucmenu.sel.location_page_id(loc.id));
-				$a.text(loc.name);
-				$a.data('location-id', loc.id)
-				$a.bind("click", ucmenu.events.location_li_click);
-				$loc_ul.append($li);
-			}
+		show_location_list: function($list){
+			var $page = $('#location-list');
+			var $include = $page.find('.content-include');
+			$include.empty().append($list);
 		},
-
-		create_location_page: function(location_id, name){
-			var location_data = ucmenu.location_data[location_id];
-			var template_page = $('#location-template');
-			var page_id = ucmenu.sel.location_page_id(location_id);
-			var $page = template_page.clone().attr('id', page_id);
-			$page.data('url', page_id);
-			$page.find('.page-header').text(name);
-			var menu_list = $page.find('ul.menu-list');
-			var template_menu_li = menu_list.find('li.menu.template');
-			for(var menu in location_data){
-				if(location_data.hasOwnProperty(menu)) {
-					menu_data = location_data[menu];
-					console.log(menu_data);
-					$menu_li = template_menu_li.clone().removeClass('template');
-					$a = $menu_li.find('a');
-					$a.text(menu);
-					$a.attr('href', '#'+ucmenu.sel.menu_page_id(location_id, menu))
-					console.log($menu_li);
-					menu_list.append($menu_li);
-					ucmenu.ui.create_menu_page(location_id, menu, menu_data);
+		show_menu_list: function(location_id){
+			$loc_page = $('#location');
+			$menu_list = $loc_page.find('.menu-list');
+			preloaded_data = ucmenu.ajax.data.locations;
+			if($menu_list.length == 0){
+				ucmenu.ajax.load_menu_list(location_id);
+			}else{
+				var cur_loc_id = $menu_list.data('location-id');
+				if(cur_loc_id == location_id){
+					$.mobile.changePage($loc_page);
+				}else{
+					//first save the current page incase we need it later...
+					preloaded_data[cur_loc_id] = $menu_list.detach();
+					if(location_id in preloaded_data){
+						//we already have data for this one, so just swap it in and go
+						$menu_list = preloaded_data[location_id]
+						ucmenu.ui.insert_and_show_menu_list($menu_list);
+					}else{
+						ucmenu.ajax.load_menu_list(location_id);
+					}
 				}
 			}
-			$('body').append($page);
 		},
+		insert_and_show_menu_list: function($menu_list){
+			$loc_page = $('#location');
+			$loc_page.find('.content-include').append($menu_list);
+			$.mobile.changePage($loc_page, {
+				allowSamePageTransition: true,
+				transition: 'none',
+				reloadPage: true
+			});
+		}
 
-		show_location_page: function(location_id){
-			$loc_page = ucmenu.sel.location_page_$(location_id);
-			$.mobile.changePage($loc_page);
-		},
-
-		create_menu_page: function(location_id, menu, menu_data){
-			var template_page = $('#menu-template');
-			page = template_page.clone().attr('id', ucmenu.sel.menu_page_id(location_id, menu));
-			var $template_cat = page.find('div.category.template');
-			for(var cat in menu_data){
-				//first make the section div
-				cat_items = menu_data[cat];
-				cat_div = $template_cat.clone().removeClass('template');
-				var item_list = cat_div.find('ul.item-list');
-				var $template_item = item_list.find('li.item.template');
-				cat_div.find('h2').text(cat);
-				//now add all the menu items to the section
-				for(var i=0; i < cat_items.length; i++){
-					item_name = cat_items[i];
-					item_li = $template_item.clone().removeClass('template');
-					item_li.find('a').text(item_name);
-					item_list.append(item_li);
-				}
-				page.find('div.content').append(cat_div);
-
-			}
-			$('body').append(page);
-		},
 	},
 	util: {
 	}
