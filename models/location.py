@@ -38,5 +38,5 @@ db.define_table('FoodRating',
 	Field('user', db.User, notnull=True),
 	Field('food', db.Food, notnull=True),
 	Field('rating', 'integer', notnull=True),
-	Field('time_last_update', 'datetime', notnull=True)
+	Field('time_created', 'datetime', notnull=False)
 )

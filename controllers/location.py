@@ -28,3 +28,8 @@ def update_all():
 	locations = db().select(db.Location.ALL)
 	for loc in locations:
 		mparser.update_location_menus(loc.id)
+
+def menus():
+	loc_id = int(request.vars.id)
+	menu_rows = db(db.Menu.location == loc_id).select(db.Menu.ALL)
+	return dict(menu_list=menu_rows)

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pre",
+				"preloaded_data"
+			],
+			[
 				"cat",
 				"category_id"
 			],
@@ -30,10 +34,6 @@
 			[
 				"lo",
 				"load_location"
-			],
-			[
-				"pre",
-				"prev_item_name"
 			],
 			[
 				"get",
@@ -523,31 +523,23 @@
 			"file": "models/location.py",
 			"settings":
 			{
-				"buffer_size": 1251,
+				"buffer_size": 1247,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "controllers/mobile.py",
+			"file": "static/mobile/ucmenu.js",
 			"settings":
 			{
-				"buffer_size": 52,
+				"buffer_size": 6425,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "controllers/default.py",
+			"file": "views/mobile/food_list.html",
 			"settings":
 			{
-				"buffer_size": 2494,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "controllers/location.py",
-			"settings":
-			{
-				"buffer_size": 1053,
+				"buffer_size": 433,
 				"line_ending": "Windows"
 			}
 		},
@@ -555,7 +547,7 @@
 			"file": "views/mobile/index.html",
 			"settings":
 			{
-				"buffer_size": 1592,
+				"buffer_size": 1921,
 				"line_ending": "Windows"
 			}
 		},
@@ -572,30 +564,6 @@
 			"settings":
 			{
 				"buffer_size": 462,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/mobile/food_list.html",
-			"settings":
-			{
-				"buffer_size": 433,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "static/mobile/ucmenu.js",
-			"settings":
-			{
-				"buffer_size": 4491,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "modules/menu_parser.py",
-			"settings":
-			{
-				"buffer_size": 3438,
 				"line_ending": "Windows"
 			}
 		}
@@ -628,13 +596,19 @@
 	},
 	"file_history":
 	[
-		"/D/schwartz-lab/web2py/applications/scanx/views/scan/ppv.html",
-		"/D/web-projects/web2py/applications/diningmenu/controllers/location.py",
-		"/D/web-projects/web2py/applications/diningmenu/views/mobile/food_list.html",
-		"/D/web-projects/web2py/applications/diningmenu/views/mobile/location_list.html",
-		"/D/web-projects/web2py/applications/diningmenu/static/mobile/ucmenu.css",
+		"/D/web-projects/achieveunlimitedct/FTP-info.txt",
+		"/D/schwartz-lab/predictors/input-files/methylation-Jul-24--13-22-15fg_file_filtered_foreground",
 		"/D/web-projects/web2py/applications/diningmenu/modules/menu_parser.py",
 		"/D/web-projects/web2py/applications/diningmenu/static/mobile/ucmenu.js",
+		"/D/web-projects/web2py/applications/diningmenu/views/mobile/food_list.html",
+		"/D/web-projects/web2py/applications/diningmenu/views/mobile/menu_list.html",
+		"/D/web-projects/web2py/applications/diningmenu/views/mobile/location_list.html",
+		"/D/web-projects/web2py/applications/diningmenu/views/mobile/index.html",
+		"/D/web-projects/web2py/applications/diningmenu/controllers/default.py",
+		"/D/web-projects/web2py/applications/diningmenu/controllers/mobile.py",
+		"/D/web-projects/web2py/applications/diningmenu/controllers/location.py",
+		"/D/schwartz-lab/web2py/applications/scanx/views/scan/ppv.html",
+		"/D/web-projects/web2py/applications/diningmenu/static/mobile/ucmenu.css",
 		"/D/web-projects/web2py/applications/diningmenu/modules/menu_parser_test.py",
 		"/D/web-projects/web2py/applications/diningmenu/.git/info/exclude",
 		"/D/schwartz-lab/web2py/applications/scanx/modules/seq_proc.py",
@@ -749,13 +723,7 @@
 		"/C/projects/roc-curves/web2py/applications/roc/controllers/curves.py",
 		"/C/Users/SchwartzDell/Desktop/scan-x data/scan-x data/load_data.py",
 		"/C/projects/plogo-curves/curves_test.py",
-		"/C/projects/plogo-curves/curves.py",
-		"/C/projects/plogo-curves/pka/bg.txt-2_scored.txt",
-		"/C/projects/plogo-curves/pka/bg.txt-1_scored.txt",
-		"/C/projects/plogo-curves/pka/bg.txt-0_scored.txt",
-		"/C/projects/plogo-curves/pka/fg.txt-2_scored.txt",
-		"/C/projects/plogo-curves/pka/fg.txt-1_scored.txt",
-		"/C/projects/plogo-curves/pka/fg.txt-0_scored.txt"
+		"/C/projects/plogo-curves/curves.py"
 	],
 	"find":
 	{
@@ -783,6 +751,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ajax.loca",
 			">",
 			"db.",
 			"db(",
@@ -909,8 +878,7 @@
 			"seq_view_helper.",
 			"bold_fixed_positions",
 			"<strong>",
-			"fixed_positions_str",
-			"score_tabl"
+			"fixed_positions_str"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1005,7 +973,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1013,15 +981,15 @@
 					"file": "models/location.py",
 					"settings":
 					{
-						"buffer_size": 1251,
+						"buffer_size": 1247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								440,
-								440
+								1216,
+								1216
 							]
 						],
 						"settings":
@@ -1037,167 +1005,33 @@
 				},
 				{
 					"buffer": 1,
-					"file": "controllers/mobile.py",
+					"file": "static/mobile/ucmenu.js",
 					"settings":
 					{
-						"buffer_size": 52,
+						"buffer_size": 6425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								52,
-								52
+								5924,
+								5924
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2347.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "controllers/default.py",
-					"settings":
-					{
-						"buffer_size": 2494,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "controllers/location.py",
-					"settings":
-					{
-						"buffer_size": 1053,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "views/mobile/index.html",
-					"settings":
-					{
-						"buffer_size": 1592,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								852,
-								852
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 243.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "views/mobile/location_list.html",
-					"settings":
-					{
-						"buffer_size": 176,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								104,
-								104
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "views/mobile/menu_list.html",
-					"settings":
-					{
-						"buffer_size": 462,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								79,
-								79
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
 					"file": "views/mobile/food_list.html",
 					"settings":
 					{
@@ -1224,55 +1058,81 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "static/mobile/ucmenu.js",
+					"buffer": 3,
+					"file": "views/mobile/index.html",
 					"settings":
 					{
-						"buffer_size": 4491,
+						"buffer_size": 1921,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3406,
-								3406
+								1698,
+								1698
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1123.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "modules/menu_parser.py",
+					"buffer": 4,
+					"file": "views/mobile/location_list.html",
 					"settings":
 					{
-						"buffer_size": 3438,
+						"buffer_size": 176,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2180,
-								2180
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/mobile/menu_list.html",
+					"settings":
+					{
+						"buffer_size": 462,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1843,7 +1703,7 @@
 		[
 			[
 				"",
-				"/D/schwartz-lab/web2py/applications/randomotif/randomotif.sublime-project"
+				"/D/schwartz-lab/web2py/applications/scanx/scanx.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -18,31 +18,37 @@ ucmenu = {
 		base_url: '/diningmenu/',
 		location_index: '/diningmenu/location/index.json',
 		location_get: '/diningmenu/location/get.json',
-		load_menu_list: function(){ return base_url + 'location/menus'; },
-		load_location_list: function(){ return base_url + 'mobile/location_list.html' },
+		load_location_list: function(){ return ucmenu.url.base_url + 'mobile/location_list.html' },
+		load_menu_list: function(){ return ucmenu.url.base_url + 'location/menus' },
+		load_food_list: function(){ return ucmenu.url.base_url + 'menu/food' },
+		get_food: function(){ return ucmenu.url.base_url + 'food/get.html' },
+		rate_food: function() { return ucmenu.url.base_url + ' food/rate.json' }
 	},
-
+	events: {
+		init_handlers: function(){
+			$('#location-list').on('click' ,'ul.location-list li.location a', ucmenu.events.location_btn_click);
+			$('#location').on('click' ,'ul.menu-list li.menu a', ucmenu.events.menu_btn_click);
+		},
+		location_btn_click: function(event){
+			var loc_id = $(this).data('id');
+			ucmenu.ui.show_menu_list(loc_id);
+		},
+		menu_btn_click: function(event){
+			var menu_id = $(this).data('id');
+			ucmenu.ui.show_food_list(menu_id);
+		},
+		food_btn_click: function(event){
+			var id = $(this).data('id');
+			ucmenu.ui.food.show(id);
+		}
+	},
 	ajax: {
 		locations: {},
-		load_menu_list: function(location_id){
-			var request = $.ajax({
-				type: 'GET',
-				url: ucmenu.url.load_menu_list(),
-				dataType: 'html',
-				data: {id: location_id},
-				success: ucmenu.ajax.load_menu_list_success,
-				error: ucmenu.ajax.ajax_error
-			});
-		},
-		load_menu_list_success: function(data, textStatus){
-			$menu_list = $(data);
-			ucmenu.ui.insert_and_show_menu_list($menu_list);
-		},
 		load_location_list: function(){
 			var request = $.ajax({
 				type: 'GET',
-				url: ucmenu.url.load_location_list,
-				dataType: 'json',
+				url: ucmenu.url.load_location_list(),
+				dataType: 'HTML',
 				success: ucmenu.ajax.load_location_list_success,
 				error: ucmenu.ajax.load_location_list_error
 			});
@@ -56,6 +62,44 @@ ucmenu = {
 			console.log(errorThrown);
 			console.log('error. Please contact a developer');
 		},
+		load_menu_list: function(location_id){
+			var request = $.ajax({
+				type: 'GET',
+				url: ucmenu.url.load_menu_list(),
+				dataType: 'HTML',
+				data: {id: location_id},
+				success: ucmenu.ajax.load_menu_list_success,
+				error: ucmenu.ajax.ajax_error
+			});
+		},
+		load_menu_list_success: function(data, textStatus){
+			$menu_list = $(data);
+			ucmenu.ui.insert_and_show_menu_list($menu_list);
+		},
+		food: {
+			data: {}, // db.Food.id => food/get.html view (jQuery)
+			get: function(food_id) {
+				var request = $.ajax({
+					type: 'GET',
+					url: ucmenu.url.get_food(),
+					dataType: 'HTML',
+					success: ucmenu.ajax.food.get_success,
+					error: ucmenu.ajax.load_location_list_error
+				});
+			},
+			get_success: function(data, textStatus){
+				ucmenu.ui.food.show_item(data);
+			},
+			rate: function(food_id, rating){
+				var request = $.ajax({
+					type: 'POST',
+					url: ucmenu.url.rate_food(),
+					dataType: 'JSON',
+					success: ucmenu.ajax.food.rate_success,
+					error: ucmenu.ajax.load_location_list_error
+				});
+			}
+		}
 	},
 	/**
 	 * @author Joey
@@ -81,20 +125,6 @@ ucmenu = {
 			return 'loc-'+loc_id+'-menu-'+menu_id;
 		}
 	},
-	events: {
-		init_handlers: function(){
-			$('#location-list').on('click' ,'ul.location-list li.location>a', ucmenu.events.location_btn_click);
-			$('#location').on('click' ,'ul.menu-list li.menu>a', ucmenu.events.menu_btn_click);
-		},
-		location_btn_click: function(event){
-			var loc_id = $(this).data('id');
-			ucmenu.ui.show_menu_list(loc_id);
-		},
-		menu_btn_click: function(event){
-			var menu_id = $(this).data('id');
-			ucmenu.ui.show_food_list(menu_id);
-		}
-	},
 	ui: {
 		/** Configuration options which cannot be changed by users, only developers **/
 		config: {
@@ -105,12 +135,13 @@ ucmenu = {
 		show_location_list: function($list){
 			var $page = $('#location-list');
 			var $include = $page.find('.content-include');
-			$include.empty().append($list);
+			$include.empty().html($list);
+			$page.trigger('create');
 		},
 		show_menu_list: function(location_id){
 			$loc_page = $('#location');
 			$menu_list = $loc_page.find('.menu-list');
-			preloaded_data = ucmenu.ajax.data.locations;
+			preloaded_data = ucmenu.ajax.locations;
 			if($menu_list.length == 0){
 				ucmenu.ajax.load_menu_list(location_id);
 			}else{
@@ -119,7 +150,9 @@ ucmenu = {
 					$.mobile.changePage($loc_page);
 				}else{
 					//first save the current page incase we need it later...
-					preloaded_data[cur_loc_id] = $menu_list.detach();
+					if( !preloaded_data.hasOwnProperty(cur_loc_id)){
+						preloaded_data[cur_loc_id] = $menu_list.detach();
+					}
 					if(location_id in preloaded_data){
 						//we already have data for this one, so just swap it in and go
 						$menu_list = preloaded_data[location_id]
@@ -132,12 +165,51 @@ ucmenu = {
 		},
 		insert_and_show_menu_list: function($menu_list){
 			$loc_page = $('#location');
-			$loc_page.find('.content-include').append($menu_list);
+			$loc_page.find('.content-include').html($menu_list);
+			var $m = $.mobile;
+			var jq = $;
+			debugger
 			$.mobile.changePage($loc_page, {
 				allowSamePageTransition: true,
 				transition: 'none',
 				reloadPage: true
 			});
+		},
+		food: {
+			insert_and_show: function($item){
+				$page = $('#food');
+				$page.find('.content-include').html($item);
+				$.mobile.changePage($page, {
+					allowSamePageTransition: true,
+					transition: 'none',
+					reloadPage: true
+				});
+			},
+			show: function(item_id){
+				$page = $('#food');
+				$item = $page.find('.food-item');
+				preloaded_data = ucmenu.ajax.food.data;
+				if($page.length == 0){
+					ucmenu.ajax.food.get(item_id);
+				}else{
+					var cur_id = $menu_list.data('food-id');
+					if(cur_id == item_id){
+						$.mobile.changePage($page);
+					}else{
+						//first save the current page incase we need it later...
+						if( !preloaded_data.hasOwnProperty(cur_id)){
+							preloaded_data[cur_id] = $item.detach();
+						}
+						if(item_id in preloaded_data){
+							//we already have data for this one, so just swap it in and go
+							$item = preloaded_data[item_id]
+							ucmenu.ui.food.insert_and_show($item);
+						}else{
+							ucmenu.ajax.food.get(item_id);
+						}
+					}
+				}
+			},
 		}
 
 	},

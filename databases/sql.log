@@ -106,3 +106,7 @@ CREATE TABLE FoodRating(
     time_last_update TIMESTAMP NOT NULL
 );
 success!
+timestamp: 2013-08-05T22:41:58.782000
+ALTER TABLE FoodRating ADD time_created TIMESTAMP NOT NULL;
+timestamp: 2013-08-05T22:42:54.008000
+ALTER TABLE FoodRating ADD time_created TIMESTAMP;
